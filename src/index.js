@@ -23,8 +23,9 @@ const store = createStore(combineReducers(Object.assign(
         { location: reducer }, 
         searchReducer, 
         movieReducer)), 
-    compose(enhancer, applyMiddleware(middleware, promiseMiddleware()),
-window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+    // compose(enhancer, applyMiddleware(middleware, promiseMiddleware()),
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+    compose(enhancer, applyMiddleware(middleware, promiseMiddleware())));
 
 ReactDOM.render(
     <Provider store={store}>
